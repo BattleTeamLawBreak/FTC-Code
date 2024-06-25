@@ -1,0 +1,44 @@
+package org.firstinspires.ftc.teamcode;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.robotcore.util.Range;
+
+@Autonomous(name="Basic: Linear OpMode", group="Linear OpMode")
+
+public class SEAMAutonMohammad extends LinearOpMode {
+
+    private ElapsedTime runtime = new ElapsedTime();
+    private DcMotor leftDrive = null;
+    private DcMotor rightDrive = null;
+
+    @Override
+    public void runOpMode() {
+        telemetry.addData("Status", "Initialized");
+        telemetry.update();
+
+        leftDrive = hardwareMap.get(DcMotor.class, "m1");
+        rightDrive = hardwareMap.get(DcMotor.class, "m2");
+
+        leftDrive.setDirection(DcMotor.Direction.FORWARD);
+        rightDrive.setDirection(DcMotor.Direction.FORWARD);
+
+
+        waitForStart();
+        runtime.reset();
+
+       
+        while (opModeIsActive()) {
+    
+        leftDrive.setPower(1);
+           rightDrive.setPower(1);
+            sleep(10000);
+    
+            telemetry.update();
+        }
+    }
+}
+
