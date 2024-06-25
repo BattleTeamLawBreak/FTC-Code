@@ -1,33 +1,50 @@
 
-/***********************************************************************
-*                                                                      *
-* OnbotJava Editor is still : beta! Please inform us of any bugs       |
-* on our discord channel! https://discord.gg/e7nVjMM                   *
-* Only BLOCKS code is submitted when in Arena                          *
-*                                                                      *
-***********************************************************************/
+package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
-public class MyFIRSTJavaOpMode extends LinearOpMode {
-    DcMotor motorLeft;
-    DcMotor motorRight;
-    DcMotor frontLeft;
-    DcMotor frontRight;
-    ColorSensor color1;
-    DistanceSensor distance1;
-    BNO055IMU imu;
+@Autonomous(name="Opmodejava")
 
-@Override
+public class TestAutonomous extends LinearOpMode {
+     
+     DcMotor motor0 = null;
+     DcMotor motor1 = null;
+     DcMotor motor2 = null;
+     DcMotor motor3 = null;
+
+    @Override
     public void runOpMode() {
-      motorLeft = hardwareMap.get(DcMotor.class, "motorLeft");
-      motorRight = hardwareMap.get(DcMotor.class, "motorRight");
-      frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
-      frontRight = hardwareMap.get(DcMotor.class, "frontRight");
-      color1 = hardwareMap.get(ColorSensor.class, "color1");
-      distance1 = hardwareMap.get(DistanceSensor.class, "distance1");
-      imu = hardwareMap.get(BNO055IMU.class, "imu");
-      motorLeft.setPower(-1);
-      motorRight.setPower(1);
+        motor0 = hardwareMap.get(DcMotor.class, "backleft");
+        motor1 = hardwareMap.get(DcMotor.class, "frontleft");
+        motor2 = hardwareMap.get(DcMotor.class, "frontright");
+        motor3 = hardwareMap.get(DcMotor.class, "backright");
+
+        telemetry.addData("Status", "Initialized");
+        telemetry.update();
+        waitForStart();
+        motor0.setPower(-.5);
+        motor1.setPower(.5);
+        motor2.setPower(-.5);
+        motor3.setPower(.5);
+        sleep(1000);
+        motor0.setPower(-.5);
+        motor1.setPower(.5);
+        motor2.setPower(-.5);
+        motor3.setPower(.5);
+   
+        
+        
+        
+        while (opModeIsActive()) {
+            telemetry.addData("Status", "Running");
+            telemetry.update();
+
+        }
     }
-    
 }
