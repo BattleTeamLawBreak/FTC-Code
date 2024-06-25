@@ -1,0 +1,59 @@
+
+package org.firstinspires.ftc.teamcode;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.robotcore.util.Range;
+@Autonomous(name="Basic: Linear OpMode", group="Linear OpMode")
+public class SEAMAutonAli extends LinearOpMode {
+    // Declare OpMode members.
+    private ElapsedTime runtime = new ElapsedTime();
+    private DcMotor leftDrive = null;
+    private DcMotor rightDrive = null;
+    private DcMotor backLeftDrive = null;
+    private DcMotor backRightDrive = null;
+    public void runOpMode() {
+        telemetry.addData("Status", "Initialized");
+        telemetry.update();
+        leftDrive = hardwareMap.get(DcMotor.class, "m2");
+        rightDrive = hardwareMap.get(DcMotor.class, "m1");
+       backLeftDrive = hardwareMap.get(DcMotor.class, "m4");
+       backRightDrive = hardwareMap.get(DcMotor.class, "m3");
+       
+        leftDrive.setDirection(DcMotor.Direction.FORWARD);
+        rightDrive.setDirection(DcMotor.Direction.FORWARD);
+       backLeftDrive.setDirection(DcMotor.Direction.FORWARD);
+       backRightDrive.setDirection(DcMotor.Direction.FORWARD);
+        
+        waitForStart();
+        runtime.reset();
+       
+        while (opModeIsActive()) {
+        leftDrive.setPower(1);
+        rightDrive.setPower(1);
+        sleep(3000);
+        leftDrive.setPower(-1);
+        rightDrive.setPower(1);
+        sleep(1000);
+        leftDrive.setPower(1);
+        rightDrive.setPower(1);
+        sleep(3000);
+        leftDrive.setPower(-1);
+        rightDrive.setPower(1);
+        sleep(1000);
+        leftDrive.setPower(1);
+        rightDrive.setPower(1);
+        sleep(3000);
+        leftDrive.setPower(-1);
+        rightDrive.setPower(1);
+        sleep(1000);
+        leftDrive.setPower(1);
+        rightDrive.setPower(1);
+        sleep(3000);
+            telemetry.update();
+        }
+    }
+}
