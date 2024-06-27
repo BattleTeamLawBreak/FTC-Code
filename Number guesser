@@ -22,14 +22,12 @@ class HelloWorld {
              } else if (guess < theNumber); {
                  System.out.println("You are low.");
              } 
-             else {
-                 System.out.println("Correct");
              }
         }
        
         
         
     }
-}
+
 
 
