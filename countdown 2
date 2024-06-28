@@ -1,0 +1,13 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    
+    public static void main(String[] args) {
+     System.out.println("countdown starting");
+        for(int x = 10; x > -1; x--){
+            System.out.println(+ x);
+        } System.out.println("countdown ended");
+
+    }
+}
