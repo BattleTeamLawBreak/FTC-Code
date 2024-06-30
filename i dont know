@@ -1,0 +1,21 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    
+    public static void main(String[] args) {
+        int x = factorial(5);
+        System.out.println(x);
+    }
+    
+    public static int factorial(int number)
+    {
+        int result = 1;
+        
+        for(int factor =2; factor <= number; factor++)
+        {
+            result *= factor;
+        }
+        return result;
+    }
+}
