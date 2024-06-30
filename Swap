@@ -1,0 +1,32 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        int x = 5;
+        int y = 3;
+        System.out.println("Before swap:");
+        System.out.println(x);
+        System.out.println(y);
+        
+        //call swap function
+        swap(x, y);
+      
+        
+       
+        
+    }
+     public static void swap(int x, int y){
+           int z = 0;
+           int i = 0;
+           z = x;
+           i = y;
+           
+           y = z;
+           x = i;
+        
+        System.out.println("After swap:");
+        System.out.println(y);
+        System.out.println(x);
+       }
+}
