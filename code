@@ -11,7 +11,7 @@ class HelloWorld {
     
         printRadius(rad);
         printDiameter(rad);
-        
+        printArea(rad);
      
     } 
     
@@ -24,6 +24,10 @@ class HelloWorld {
             System.out.println("The diameter is " + diameter);
             
             
+        }
+        public static void printArea(int radius){
+            double area = radius * radius * 3.14;
+            System.out.println("The area is " + area);
         }
     
 }
