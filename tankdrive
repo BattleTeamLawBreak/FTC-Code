@@ -7,25 +7,30 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp
 
-public class StickControlTank extends LinearOpMode {
+public class TEST extends LinearOpMode {
 
+    DcMotor motor0 = null;
     DcMotor motor1 = null;
     DcMotor motor2 = null;
     DcMotor motor3 = null;
-    DcMotor motor4 = null;
     double leftstick = 0;
     double rightstick = 0;
+    Servo servo1 = null;
+
     
     @Override
     public void runOpMode() {
         
-    motor1 = hardwareMap.get(DcMotor.class, "frontright");
-    motor2 = hardwareMap.get(DcMotor.class, "frontleft");
-    motor3 = hardwareMap.get(DcMotor.class, "backright");
-    motor4 = hardwareMap.get(DcMotor.class, "backleft");
+    motor0 = hardwareMap.get(DcMotor.class, "Frontright");
+    motor1 = hardwareMap.get(DcMotor.class, "Frontleft");
+    motor2 = hardwareMap.get(DcMotor.class, "Backright");
+    motor3 = hardwareMap.get(DcMotor.class, "Backleft");
+    
+
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
@@ -35,10 +40,10 @@ public class StickControlTank extends LinearOpMode {
             leftstick = gamepad1.left_stick_y;
             rightstick = gamepad1.right_stick_y;
             
-            motor1.setPower(leftstick);
-            motor3.setPower(-leftstick);
+            motor0.setPower(leftstick);
+            motor1.setPower(-leftstick);
             motor2.setPower(rightstick);
-            motor4.setPower(-rightstick);
+            motor3.setPower(-rightstick);
             
             telemetry.addData("Status", "Running");
             telemetry.addData("Left Stick:", leftstick);
