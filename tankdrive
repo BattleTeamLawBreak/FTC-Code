@@ -40,8 +40,8 @@ public class TEST extends LinearOpMode {
             leftstick = gamepad1.left_stick_y;
             rightstick = gamepad1.right_stick_y;
             
-            motor0.setPower(leftstick);
-            motor1.setPower(-leftstick);
+            motor0.setPower(-leftstick);
+            motor1.setPower(leftstick);
             motor2.setPower(rightstick);
             motor3.setPower(-rightstick);
             
