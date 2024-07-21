@@ -20,6 +20,7 @@ public class TEST extends LinearOpMode {
     double leftstick = 0;
     double rightstick = 0;
     Servo servo1 = null;
+    
 
     @Override
     public void runOpMode() {
@@ -43,11 +44,20 @@ public class TEST extends LinearOpMode {
             motor2.setPower(rightstick);
             motor3.setPower(-rightstick);
             
-            if (gamepad1.x) {
-                servo1.setPostition(1.0);
-            } else {
-                servo1.setPosition(0);
-            }
+        
+                tgtPower = -this.gamepad1.left_stick_y;
+                motorTest.setPower(tgtPower);
+    
+                if(gamepad1.y) {
+        
+                servoTest.setPosition(0);
+               } else if (gamepad1.x || gamepad1.b) {
+        
+               servoTest.setPosition(0.5);
+               } else if (gamepad1.a) {
+       
+               servoTest.setPosition(1);
+    }
             
             telemetry.addData("Status", "Running");
             telemetry.addData("Left Stick:", leftstick);
