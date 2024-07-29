@@ -1,0 +1,19 @@
+package domain;
+
+public class HelloWorld {
+    
+ public static Car pagani = new Car();
+
+    public static void main(String[] args) {
+        
+        pagani.make = "Pagani";
+        pagani.model = "Huayra";
+        pagani.engine = "V12-R Evo engine";
+        
+        System.out.println("The car company: " + pagani.make);
+        System.out.println("The car model is: " + pagani.model);
+        System.out.println("The car engine is: " + pagani.engine);
+
+    }
+
+}
