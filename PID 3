@@ -78,9 +78,10 @@ public class PIDseam extends LinearOpMode {
      public double PIDcontroller(double TargetPoint, double PositionRobot) {
     
     
-    double propError = TargetPoint - PositionRobot; 
-    integError += propError * runtime.seconds();
-    double derivError = (propError - prevError) / runtime.seconds();
+    
+    double propError = targetPoint - PositionRobot;
+    integError += propError * ElapsedTime.time();
+    double derivError = (propError - prevError) / ElapsedTime.time();
     
     double error = (kp * propError) + (ki * integError) + (kd * derivError);
     
