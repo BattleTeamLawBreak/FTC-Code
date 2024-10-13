@@ -20,6 +20,7 @@ public class PIDseam extends LinearOpMode {
     double kp = 0.4;
     double ki = 0.6;
     double kd = 0.7;
+    currentTime = ElapsedTime.time();
  
    double integError = 0;
    double prevError = 0;
@@ -80,8 +81,8 @@ public class PIDseam extends LinearOpMode {
     
     
     double propError = targetPoint - PositionRobot;
-    integError += propError * ElapsedTime.time();
-    double derivError = (propError - prevError) / ElapsedTime.time();
+    integError += propError * currentTime();
+    double derivError = (propError - prevError) / currentTime;
     
     double error = (kp * propError) + (ki * integError) + (kd * derivError);
     
