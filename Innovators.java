@@ -11,9 +11,9 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
-@TeleOp(name="Rangers Robot", group="Linear OpMode")
+@TeleOp(name="Innovators", group="Linear OpMode")
 
-public class RangersRobot extends LinearOpMode {
+public class Innovators extends LinearOpMode {
 
     DcMotorEx lf;
     DcMotorEx rf;
