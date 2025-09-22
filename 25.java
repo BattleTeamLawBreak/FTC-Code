@@ -20,36 +20,35 @@ import java.util.List;
 @TeleOp(name = "TeleOp Turret Tracker", group = "TeleOp")
 public class TeleOpTurretTracker extends LinearOpMode {
 
-    // Drive Motors
+    
     private DcMotor leftFrontDrive = null;
     private DcMotor leftBackDrive = null;
     private DcMotor rightFrontDrive = null;
     private DcMotor rightBackDrive = null;
 
-    // Turret System
-    private DcMotor turretMotor = null;
-    private Servo turretServo = null; // Alternative: use servo for lighter turrets
     
-    // Vision
+    private DcMotor turretMotor = null;
+    private Servo turretServo = null; 
+    
+   
     private VisionPortal visionPortal;
     private AprilTagProcessor aprilTag;
 
-    // Constants for drive
+    
     private static final double DRIVE_SPEED_MULTIPLIER = 0.8;
     
-    // Constants for turret tracking
-    private static final double TURRET_SPEED_GAIN = 0.015;  // Turret rotation speed control
-    private static final double MAX_TURRET_SPEED = 0.4;     // Maximum turret rotation speed
-    private static final double TURRET_DEADBAND = 2.0;      // Degrees - stop turret if within this range
-    private static final double TURRET_SEARCH_SPEED = 0.15; // Speed when searching for targets
+
+    private static final double TURRET_SPEED_GAIN = 0.015;  
+    private static final double MAX_TURRET_SPEED = 0.4;     
+    private static final double TURRET_DEADBAND = 2.0;      
+    private static final double TURRET_SEARCH_SPEED = 0.15; 
     
-    // Turret position tracking (for motor-based turret)
-    private static final double TURRET_TICKS_PER_DEGREE = 4.0; // Adjust based on your turret gearing
+    
+    private static final double TURRET_TICKS_PER_DEGREE = 4.0; 
     private double turretTargetPosition = 0;
     private boolean turretTrackingActive = true;
     
-    // Goal AprilTag IDs (adjust these based on your field setup)
-    private static final int[] GOAL_TAG_IDS = {1, 2, 3, 4, 7, 8}; // Example IDs for goal tags
+    private static final int[] GOAL_TAG_IDS = {1, 2, 3, 4, 7, 8};
     
     private ElapsedTime runtime = new ElapsedTime();
     private ElapsedTime turretSearchTimer = new ElapsedTime();
